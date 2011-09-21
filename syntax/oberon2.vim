@@ -45,6 +45,7 @@ syn match   oberon2Const / [0-9][0-9A-FHX.\-+]*/
 
 " Comments may be nested in Oberon-2:
 syn region oberon2Comment start="(\*" end="\*)" contains=oberon2Comment,oberon2Todo
+syn match  oberon2CommentLine /--.*$/
 syn keyword oberon2Todo	contained TODO FIXME XXX
 
 " Strings
@@ -72,6 +73,7 @@ if version >= 508 || !exists("did_oberon2_syntax_inits")
   HiLink oberon2Keyword		Statement
   HiLink oberon2AttKeyword	PreProc
   HiLink oberon2Comment		Comment
+  HiLink oberon2CommentLine	Comment
   " The following is just a matter of taste (you want to try this instead):
   " hi oberon2Comment term=bold ctermfg=DarkBlue guifg=Blue gui=bold
   HiLink oberon2Todo		Todo
